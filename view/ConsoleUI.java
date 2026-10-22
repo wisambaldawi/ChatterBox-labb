@@ -1,4 +1,5 @@
 package view;
+import controller.ChattController;
 import java.util.Scanner;
 
 public class ConsoleUI {
