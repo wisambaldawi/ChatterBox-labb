@@ -1,3 +1,4 @@
+package model;
 public class Message {
     private String messageId;
     private String content;
