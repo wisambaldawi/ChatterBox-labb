@@ -69,8 +69,4 @@ public class ChattController {
         }
         return false;
     }
-
-    public void handleLogin(String username, String password) {
-
-    }
 }

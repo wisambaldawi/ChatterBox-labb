@@ -1,6 +1,7 @@
 package view;
 import java.util.Scanner;
 import controller.ChattController;
+import model.Message;
 
 public class ConsoleUI {
 
