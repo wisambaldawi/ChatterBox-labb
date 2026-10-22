@@ -1,9 +1,9 @@
 package controller;
 import model.User;
+import model.Message;
 
 import java.util.ArrayList;
 
-import model.Message;
 
 public class ChattController {
 
@@ -16,7 +16,22 @@ public class ChattController {
         this.messages = new ArrayList<>();
         this.currentUser = null;
 
+        users = User.getDefaultUsers();
+
         this.users.add(new User("1", "Admin", "123"));
+    }
+    public boolean login(String userName, String userPassword){
+        for(User u : users){
+            if(u.getUserName().equals(userName) && u.getUserPassword().equals(userPassword)){
+                currentUser = u;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getCurrentUserName(){
+        return currentUser.getUserName();
     }
 
     public ArrayList<Message> getAllMessages() {

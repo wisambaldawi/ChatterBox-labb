@@ -1,4 +1,6 @@
 package model;
+import java.util.ArrayList;
+
 public class User {
     private String userID;
     private String userName;
@@ -9,6 +11,16 @@ public class User {
         setUserName(name);
         setUserPassword(password);
     }
+
+    public static ArrayList<User> getDefaultUsers(){
+        ArrayList<User> users = new ArrayList<>();
+        users.add(new User("U001", "ViggoViborg", "1234"));
+        users.add(new User("U002", "WisamBaldawi", "4321"));
+        users.add(new User("U003", "KevinThor", "5678"));
+        users.add(new User("U004", "MuhammadHumayoun", "8765"));
+        return users;
+    }
+
 
     public String getUserID(){
         return userID;
