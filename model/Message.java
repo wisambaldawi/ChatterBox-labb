@@ -3,6 +3,7 @@ public class Message {
     private String messageId;
     private String content;
     private User author;
+    //add date
 
     public Message (String messageId, String content, User author) {
         this.messageId = messageId;
@@ -27,3 +28,5 @@ public class Message {
         return author.getUserName() + " (ID: " + messageId + ")\n" + content;
     }
 }
+//read data csv
+//write data csv

@@ -44,7 +44,11 @@ public class ConsoleUI {
                 }
             }
             else if(choice.equals("2")){
-                //viewAllMessages();
+                System.out.println("\n--- Chatt history ---");
+                    for (Message m : controller.getAllMessages()) {
+                        System.out.println(m.toString());
+                        System.out.println("-------------");
+                }
             }
             else if(choice.equals("3")){
                 System.out.println("Program ended");
@@ -69,7 +73,10 @@ public class ConsoleUI {
             String choice = scanner.nextLine();
 
             if(choice.equals("1")){
-                //writeMessage();
+                System.out.println("Write your meddage: ");
+                String text = scanner.nextLine();
+                controller.writeMessage(text);
+                System.out.println("Message send");
             }
             else if(choice.equals("2")){
                 boolean quit = messageMenu();
@@ -100,10 +107,27 @@ public class ConsoleUI {
             String choice = scanner.nextLine();
 
             if(choice.equals("1")){
-                //viewAllMessages();
+                System.out.println("\n--- Chatt history ---");
+                for (Message m : controller.getAllMessages()) {
+                    System.out.println(m.toString());
+                    System.out.println("-------------");
+                }
             }
             else if(choice.equals("2")){
-                //viewYourMessages();
+                System.out.println("\n--- Your Messages ---");
+                boolean hasMessage = false;
+
+                for (Message m : controller.getAllMessages()) {
+                    if (m.getAuthor().getUserName().equals(controller.getCurrentUserName())) {
+                        System.out.println(m.toString());
+                        System.out.println("---------------");
+                        hasMessage = true;
+                    }
+                }
+                if (!hasMessage) {
+                    System.out.println("You dont have any messages");
+                }
+            
             }
             else if(choice.equals("3")){
                 running = false;   
