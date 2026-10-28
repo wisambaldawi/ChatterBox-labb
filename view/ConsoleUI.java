@@ -73,7 +73,7 @@ public class ConsoleUI {
             String choice = scanner.nextLine();
 
             if(choice.equals("1")){
-                System.out.println("Write your meddage: ");
+                System.out.println("Write your message: ");
                 String text = scanner.nextLine();
                 controller.writeMessage(text);
                 System.out.println("Message send");
