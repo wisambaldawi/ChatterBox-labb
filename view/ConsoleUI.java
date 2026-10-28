@@ -81,7 +81,7 @@ public class ConsoleUI {
             else if(choice.equals("2")){
                 boolean quit = messageMenu();
                 if(quit){
-                    return true;   // skickar vidare "avsluta" uppåt
+                    return true;   
                 }
             }
             else if(choice.equals("3")){
@@ -101,7 +101,8 @@ public class ConsoleUI {
             System.out.println("\n=== Message Menu ===");
             System.out.println("1. View all messages");
             System.out.println("2. View your messages");
-            System.out.println("3. Return");
+            System.out.println("3. Delete a message");
+            System.out.println("4. Return");
             System.out.print("Choice: ");
 
             String choice = scanner.nextLine();
@@ -130,12 +131,22 @@ public class ConsoleUI {
             
             }
             else if(choice.equals("3")){
-                running = false;   
+                System.out.print("Enter ID for the message to delete: ");
+                String idToDelete = scanner.nextLine();
+                boolean deleted = controller.deleteMessage(idToDelete);
+                if(deleted) {
+                    System.out.println("Message deleted successfully!");
+                } else {
+                    System.out.println("Could not delete message");
+                }
             }
-            else{
-                System.out.println("Invalid, try again");
+            else if(choice.equals("4")){
+                running = false;
             }
-        }
+            else {
+            System.out.println("Invalid, try again");
+            }
+        } 
         return false;
     }
 }
